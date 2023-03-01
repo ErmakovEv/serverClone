@@ -52,7 +52,7 @@ class UserController {
   async check(req: express.Request, res: express.Response) {
     const { user } = req.body;
     const token = generateJwt(user.id, user.email, user.role);
-    return res.json({ token });
+    return res.json({ token, user });
   }
 }
 
